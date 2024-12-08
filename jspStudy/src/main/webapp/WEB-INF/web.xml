@@ -41,4 +41,14 @@
     <servlet-name>memberList</servlet-name>
     <url-pattern>/memberList</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Abcd</display-name>
+    <servlet-name>Abcd</servlet-name>
+    <servlet-class>co.kh.dev.Abcd</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Abcd</servlet-name>
+    <url-pattern>/Abcd</url-pattern>
+  </servlet-mapping>
 </web-app>
