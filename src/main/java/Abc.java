@@ -12,8 +12,8 @@ public class Abc {
 				a++;
 				continue;
 			}
-			System.out.println("a:" + a);
 			a++;
+			System.out.println("a:" + a);
 		}
 		
 		System.out.println();
@@ -33,8 +33,8 @@ public class Abc {
 				c++;
 				continue;
 			}
-			c++;
 			System.out.println("c:" + c);
+			c++;
 		}
 
 
