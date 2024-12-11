@@ -6,10 +6,14 @@ BODY {
 	LINE-HEIGHT: 160%;
 }
 
-MAIN {
+main {
 	width: 80%;
 	margin: 0 auto;
-	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
 }
 
 TD {
@@ -62,4 +66,8 @@ A:link {
 
 A:hover {
 	text-decoration: #66CCFF
+}
+
+A:visited {
+	text-decoration: #330066
 }
