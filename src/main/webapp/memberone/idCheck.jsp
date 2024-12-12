@@ -24,7 +24,7 @@ boolean flag = sdao.selectIdCheck(svo);
 	<main>
 <%
 		if (flag == true) {
-			out.println(id+"는 이미 존재한는 ID입니다.<br></br>");
+			out.println(id+"는 이미 존재하는 ID입니다.<br></br>");
 		} else {
 			out.println(id+"는 사용 가능 합니다.<br></br>");
 		}
