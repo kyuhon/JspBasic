@@ -2,8 +2,8 @@
 <%@page import="co.kh.dev.boardone.model.BoardVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@ page contentType="text/html; charset=UTF-8"%>
-<%@ include file="view/color.jsp"%>
+<%@page contentType="text/html; charset=UTF-8"%>
+<%@include file="view/color.jsp"%>
 <%
 	// 1. 페이징기법: 페이지 사이즈 : 1페이지 10개만 보여줘
 	int pageSize = 10;
@@ -15,8 +15,8 @@
 	}
 	// 3. 현재페이지 설정, start, end
 	int currentPage = Integer.parseInt(pageNum);
-	int start = (currentPage - 1)*pageSize + 1; //4page 시작보여줘: (4-1)*10 + 1 => 31
-	int end = (currentPage)*pageSize ; //4page 끝보여줘: (4)*10 => 40
+	int start = (currentPage - 1)*pageSize + 1; //ex)4page 시작보여줘: (4-1)*10 + 1 => 31
+	int end = (currentPage)*pageSize ; //ex)4page 끝보여줘: (4)*10 => 40
 	
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 %>

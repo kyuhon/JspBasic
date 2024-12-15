@@ -55,7 +55,6 @@ int num=0, ref=0, step=0, depth=0;
 				<td width="70" bgcolor="<%=value_c%>" align="center">제목</td>
 				<td width="330">
 				<%if(request.getParameter("num")==null){%>
-				
    			<input type="text" size="50" maxlength="50" name="subject"/>
  <%
  }else{
@@ -68,13 +67,15 @@ int num=0, ref=0, step=0, depth=0;
 			</tr>
 			<tr>
 				<td width="70" bgcolor="<%=value_c%>" align="center">내용</td>
-				<td width="330"><textarea name="content" rows="13" cols="50"></textarea>
+				<td width="330">
+				<textarea name="content" rows="13" cols="50"></textarea>
 				</td>
 			</tr>
 			<tr>
 				<td width="70" bgcolor="<%=value_c%>" align="center">비밀번호</td>
-				<td width="330"><input type="password" size="10" maxlength="10"
-					name="pass" /></td>
+				<td width="330">
+				<input type="password" size="10" maxlength="10" name="pass" />
+				</td>
 			</tr>
 			<tr>
 				<td colspan="2" bgcolor="<%=value_c%>" align="center">
