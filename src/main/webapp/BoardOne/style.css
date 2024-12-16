@@ -17,6 +17,16 @@ main {
 	align-content: center;
 }
 
+div.center {
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+}
+
 TD {
 	FONT-SIZE: 9pt;
 	COLOR: black;

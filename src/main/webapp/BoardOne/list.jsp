@@ -7,7 +7,7 @@
 <%
 	// 1. 페이징기법: 페이지 사이즈 : 1페이지 10개만 보여줘
 	int pageSize = 10;
-	// 2. 페이징기법: 페이지번호선택
+	// 2. 페이징기법: 페이지번호선택(기본페이지는 1페이지)
 	/* request.setCharacterEncoding("UTF-8"); <- 한글이 없어서 안씀>*/
 	String pageNum = request.getParameter("pageNum");
 	if(pageNum == null) {
@@ -76,9 +76,10 @@ number = count - (currentPage - 1) * pageSize;
 			%>
 			<tr height="30">
 				<td align="center" width="50"><%=number--%></td>
+				<!-- 위에 -- 모지? -->
 				<td width="250">
 					<!-- 수정 <5> --> 
-				<a href="content.jsp?num=<%=article.getNum()%>&pageNum=1">
+				<a href="content.jsp?num=<%=article.getNum()%>&pageNum=<%=currentPage%>">
 				<%
 				  //6. depth 값에 따라서 5배수로 증가를 해서 화면에 보여줘야한다.
 				// depth : 1 => 길이 : 5, depth : 2 => 길이 : 10
@@ -88,8 +89,11 @@ number = count - (currentPage - 1) * pageSize;
  %>
   		<img src="images/level.gif" width="<%=wid%>" height="16">
   		<img src="images/re.gif">
- <%	}
+ <%	
+ } else {
  %>
+ 			 <img src="images/level.gif" width="<%=wid%>" height="16">
+ <%}%>		 
 					<!-- 수정<6> -->
 						<%=article.getSubject()%>
 						</a> 
@@ -99,8 +103,8 @@ number = count - (currentPage - 1) * pageSize;
 					}
 					%>
 				</td>
-				<td align="center" width="100"><a
-					href="mailto:<%=article.getEmail()%>"> <%=article.getWriter()%></a></td>
+				<td align="center" width="100">
+				<a href="mailto:<%=article.getEmail()%>"> <%=article.getWriter()%></a></td>
 				<td align="center" width="150"><%=sdf.format(article.getRegdate())%></td>
 				<td align="center" width="50"><%=article.getReadcount()%></td>
 				<td align="center" width="100"><%=article.getIp()%></td>
@@ -108,11 +112,46 @@ number = count - (currentPage - 1) * pageSize;
 			<%
 			}
 			%>
-		</table>
-		<%
+	 <%
 		}
-		%>
+	 %>
+		</table>
+		</main>
+		<br>
+		<div align="center">
+	 <%
+    if (count > 0) {
+        int pageBlock = 5;
+        int imsi = count % pageSize == 0 ? 0 : 1;
+        int pageCount = count / pageSize + imsi;
+        int startPage = (int)((currentPage-1)/pageBlock)*pageBlock + 1;
+        int endPage = startPage + pageBlock - 1;
+        if (endPage > pageCount) endPage = pageCount;  
+        if (startPage > pageBlock) {    
+   %>
+        <a href="list.jsp?pageNum=<%=startPage-pageBlock%>">[이전]</a>
+   <%
+        }
+        for (int i = startPage ; i <= endPage ; i++) { 
+        	if(currentPage == i){
+   %>     		
+        		<a href="list.jsp?pageNum=<%= i %>">[[<%= i %>]]</a>
+   <%     		
+        	} else {
+   %>     		
+        		<a href="list.jsp?pageNum=<%= i %>">[<%= i %>]</a>
+   <%     		
+        	}
+        }
+        
+        if (endPage < pageCount) { 
+   %>
+        <a href="list.jsp?pageNum=<%=startPage+pageBlock%>">[다음]</a>
+   <%
+          }
+      }
+   %>
 		<!-- 수정 <7> -->
-	</main>
+</div>
 </body>
 </html>
