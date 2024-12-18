@@ -98,20 +98,29 @@
     <url-pattern>/adf</url-pattern>
   </servlet-mapping>
   <servlet>
- <servlet-name>MyOne</servlet-name>
- <servlet-class>sample.MyFirstServlet</servlet-class>
- </servlet>
- <servlet-mapping>
- <servlet-name>MyOne</servlet-name>
- <url-pattern>/MyFirstServlet</url-pattern>
- </servlet-mapping>
-  <!-- 에러처리코드 -->
+    <servlet-name>MyOne</servlet-name>
+    <servlet-class>sample.MyFirstServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyOne</servlet-name>
+    <url-pattern>/MyFirstServlet</url-pattern>
+  </servlet-mapping>
   <error-page>
-  	<error-code>404</error-code>
-  	<location>/error/error404.jsp</location>
+    <error-code>404</error-code>
+    <location>/error/error404.jsp</location>
   </error-page>
   <error-page>
-  	<error-code>500</error-code>
-  	<location>/error/error500.jsp</location>
+    <error-code>500</error-code>
+    <location>/error/error500.jsp</location>
   </error-page>
+  <servlet>
+    <description></description>
+    <display-name>memControlServlet</display-name>
+    <servlet-name>memControlServlet</servlet-name>
+    <servlet-class>co.kh.dev.mvc.action.MemControlServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>memControlServlet</servlet-name>
+    <url-pattern>/memControlServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
